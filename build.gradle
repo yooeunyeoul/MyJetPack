@@ -41,6 +41,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$gradleVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        //https://www.charlezz.com/?p=354
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion" //TODO 네비게이션 컴포넌트는 애플리케이션의 화면간의 이동을 구현하는것을 단순화 시켜주는 라이브러리이다.
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
