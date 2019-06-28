@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
-apply plugin: 'androidx.navigation.safeargs.kotlin' // directions 를 쓸 수 있게 해줌. 
+apply plugin: 'androidx.navigation.safeargs.kotlin' // directions 를 쓸 수 있게 해줌.
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
