@@ -52,18 +52,18 @@ plugins {
     id "com.diffplug.gradle.spotless" version "3.13.0" // TODO 뭔지 모르겟음
 }
 
-spotless {
-    kotlin {
-        target "**/*.kt"
-        ktlint(ktlintVersion)
-    }
-}
-
 allprojects {
     repositories {
         google()
         jcenter()
         
+    }
+}
+
+spotless {
+    kotlin {
+        target "**/*.kt"
+        ktlint(ktlintVersion)
     }
 }
 
