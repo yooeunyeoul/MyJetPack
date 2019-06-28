@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/garden_fragment">
+
+    <fragment
+        android:id="@+id/garden_fragment"
+        android:name="com.example.myjetpackwithandroidx.view.GardenFragment"
+        android:label="My garden"
+        tools:layout="@layout/fragment_garden">
+
+        <action
+            android:id="@+id/action_garden_fragment_to_plant_detail_fragment"
+            app:destination="@id/plant_detail_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/plant_list_fragment"
+        android:name="com.example.myjetpackwithandroidx.view.PlantListFragment"
+        android:label="Plant list"
+        tools:layout="@layout/fragment_plant_list">
+
+        <action
+            android:id="@+id/action_plant_list_fragment_to_plant_detail_fragment"
+            app:destination="@id/plant_detail_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/plant_detail_fragment"
+        android:name="com.example.myjetpackwithandroidx.view.PlantDetailFragment"
+        android:label="Plant details"
+        tools:layout="@layout/fragment_plant_detail">
+        <argument
+            android:name="plantId"
+            app:argType="string" />
+    </fragment>
+
+
+</navigation>
