@@ -3,6 +3,7 @@ package com.example.myjetpackwithandroidx.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -24,8 +25,9 @@ class PlantAdapter : ListAdapter<Plant, PlantAdapter.ViewHolder>(PlantDiffCallba
         val plant = getItem(position)
         holder.apply {
             bind(View.OnClickListener {
-                val directions = PlantListFragmentDirections
-
+                val direction =
+                    PlantListFragmentDirections.actionPlantListFragmentToPlantDetailFragment(plantId = plant.plantId)
+                it.findNavController().navigate(direction)
             }, plant)
 
         }
