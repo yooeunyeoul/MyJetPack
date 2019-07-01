@@ -2,6 +2,8 @@ package com.example.myjetpackwithandroidx.DAO
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.myjetpackwithandroidx.data.Plant
 
@@ -13,6 +15,9 @@ interface PlantDao {
 
     @Query("SELECT * FROM plants WHERE growZoneNumber = :growZoneNumber ORDER BY name")
     fun getPlantsWithGrowZoneNumber(growZoneNumber: Int): LiveData<List<Plant>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(plants:List<Plant>)
 
 
 }

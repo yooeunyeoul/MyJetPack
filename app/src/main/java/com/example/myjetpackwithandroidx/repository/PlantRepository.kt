@@ -16,14 +16,14 @@ class PlantRepository private constructor(private val plantDao: PlantDao) {
         @Volatile
         private var instance: PlantRepository? = null
 
-        fun getInstance(plantDao: PlantDao) {
+        fun getInstance(plantDao: PlantDao) =
             instance ?: synchronized(this) {
                 //TODO :: also 에서 apply 로 바꿔봄
                 PlantRepository(plantDao).apply {
                     instance = this
                 }
             }
-        }
+
     }
 
 
