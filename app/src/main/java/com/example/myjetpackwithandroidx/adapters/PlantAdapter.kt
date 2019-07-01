@@ -10,6 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myjetpackwithandroidx.data.Plant
 import com.example.myjetpackwithandroidx.databinding.ListItemPlantBinding
 import com.example.myjetpackwithandroidx.view.PlantListFragmentDirections
+import com.example.myjetpackwithandroidx.view.PlantListFragment
+
+/**
+ * Adapter for the [RecyclerView] in [PlantListFragment].
+ * [list_item_plant.xml]
+ */
 
 class PlantAdapter : ListAdapter<Plant, PlantAdapter.ViewHolder>(PlantDiffCallback()) {
 
@@ -40,11 +46,9 @@ class PlantAdapter : ListAdapter<Plant, PlantAdapter.ViewHolder>(PlantDiffCallba
             binding.apply {
                 clickListener = listener
                 plant = item
-//                executePendingBindings()
+                executePendingBindings()
             }
         }
-
-
     }
 }
 

@@ -34,7 +34,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
+// 만약 Java가 아닌 Kotlin을 쓰고 있다면,
+// annotationProcessor 대신 kapt 를 이용한다. 코드 내에 Java 클래스가 포함되어 있어도 kapt가 그것까지 고려해 줄 것이다.
+// test 소스는 kaptTest 소스로 대체한다. (이 내용은 Kotlin kapt 페이지를 참조하였다.)
+// https://blog.yena.io/studynote/2018/09/08/Android-Kotlin-Room.html
 dependencies {
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
     kapt "com.github.bumptech.glide:compiler:$rootProject.glideVersion"

@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myjetpackwithandroidx.databinding.FragmentGardenBinding
 
+/**
+ * [fragment_garden.xml]
+ */
 class GardenFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

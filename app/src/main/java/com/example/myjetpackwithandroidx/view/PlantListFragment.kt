@@ -11,7 +11,9 @@ import com.example.myjetpackwithandroidx.InjectorUtils.InjectorUtils
 import com.example.myjetpackwithandroidx.adapters.PlantAdapter
 import com.example.myjetpackwithandroidx.databinding.FragmentPlantListBinding
 import com.example.myjetpackwithandroidx.viewmodels.PlantListViewModel
-
+/**
+ * [fragment_plant_list.xml]
+ */
 class PlantListFragment : Fragment() {
 
     private val viewModel: PlantListViewModel by viewModels {
@@ -20,11 +22,13 @@ class PlantListFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FragmentPlantListBinding.inflate(inflater, container, false)
-//        context ?: return binding.root
+        context ?: return binding.root
 
         val adapter = PlantAdapter()
         binding.plantList.adapter = adapter
         subscribeUi(adapter)
+
+        setHasOptionsMenu(true)
 
         return binding.root
     }

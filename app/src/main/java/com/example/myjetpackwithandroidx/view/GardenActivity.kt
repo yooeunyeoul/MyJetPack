@@ -13,6 +13,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.myjetpackwithandroidx.R
 import com.example.myjetpackwithandroidx.databinding.ActivityMainBinding
 
+/**
+ * [activity_main.xml]
+ */
 class GardenActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
