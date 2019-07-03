@@ -7,6 +7,8 @@ import com.example.myjetpackwithandroidx.data.Plant
 class PlantRepository private constructor(private val plantDao: PlantDao) {
 
     fun getPlants() = plantDao.getPlants()
+
+    fun getPlant(plantId:String) = plantDao.getPlant(plantId)
     fun getPlantsWithGrowZoneNumber(growZoneNumber: Int): LiveData<List<Plant>> =
         plantDao.getPlantsWithGrowZoneNumber(growZoneNumber)
 

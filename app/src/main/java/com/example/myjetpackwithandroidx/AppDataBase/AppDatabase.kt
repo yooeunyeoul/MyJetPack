@@ -5,6 +5,7 @@ import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
+import com.example.myjetpackwithandroidx.DAO.GardenPlantingDao
 import com.example.myjetpackwithandroidx.DAO.PlantDao
 import com.example.myjetpackwithandroidx.data.GardenPlanting
 import com.example.myjetpackwithandroidx.data.Plant
@@ -15,6 +16,7 @@ import com.example.myjetpackwithandroidx.utilities.Converters
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun plantDao(): PlantDao
+    abstract fun gardenPlantingDao(): GardenPlantingDao
 
     companion object {
 

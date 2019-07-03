@@ -26,21 +26,21 @@ class GardenPlantingRepository private constructor(private val gardenPlantingDao
         gardenPlantingDao.getGardenPlantingForPlant(plantId)
 
 
-//    companion object {
-//
-//        //TODO Volatile 이 뭐지??
-//        @Volatile
-//        private var instance: GardenPlantingRepository? = null
-//
-//        fun getInstance(plantDao: PlantDao) =
-//            instance ?: synchronized(this) {
-//                //TODO :: also 에서 apply 로 바꿔봄
-//                GardenPlantingRepository(plantDao).apply {
-//                    instance = this
-//                }
-//            }
-//
-//    }
+    companion object {
+
+        //TODO Volatile 이 뭐지??
+        @Volatile
+        private var instance: GardenPlantingRepository? = null
+
+        fun getInstance(gardenPlantingDao: GardenPlantingDao) =
+            instance ?: synchronized(this) {
+                //TODO :: also 에서 apply 로 바꿔봄
+                GardenPlantingRepository(gardenPlantingDao).apply {
+                    instance = this
+                }
+            }
+
+    }
 
 
 }

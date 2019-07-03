@@ -3,6 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="viewModel"
+            type="com.example.myjetpackwithandroidx.viewmodels.PlantDetailViewModel" />
+    </data>
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,13 +27,15 @@
                 android:id="@+id/toolbar_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:title=""
+                app:title="@{viewModel.plant.name}"
                 app:toolbarId="@id/toolbar">
 
                 <ImageView
+                    android:scaleType="centerCrop"
                     android:id="@+id/detail_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    app:ImageFromUrl="@{viewModel.plant.imageUrl}"
                     app:layout_collapseMode="parallax" />
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -46,6 +59,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="8dp"
+                    android:text="@{viewModel.plant.name}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -72,6 +86,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
+                    android:text="@{viewModel.plant.description}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
