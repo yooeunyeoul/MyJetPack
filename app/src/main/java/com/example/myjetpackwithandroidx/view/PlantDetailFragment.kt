@@ -14,6 +14,7 @@ import com.example.myjetpackwithandroidx.InjectorUtils.InjectorUtils
 import com.example.myjetpackwithandroidx.R
 import com.example.myjetpackwithandroidx.databinding.FragmentPlantDetailBinding
 import com.example.myjetpackwithandroidx.viewmodels.PlantDetailViewModel
+import com.google.android.material.snackbar.Snackbar
 
 /**
  * [fragment_plant_detail.xml]
@@ -38,7 +39,8 @@ class PlantDetailFragment : Fragment() {
             lifecycleOwner = this@PlantDetailFragment
 
             fab.setOnClickListener { view ->
-
+                plantDetailViewModel.addPlantToGarden()
+                Snackbar.make(view, "식물이 가든에 추가되었습니다.", Snackbar.LENGTH_LONG).show()
 
             }
         }
