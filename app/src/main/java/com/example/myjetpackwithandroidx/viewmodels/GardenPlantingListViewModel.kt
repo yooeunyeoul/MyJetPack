@@ -13,8 +13,11 @@ class GardenPlantingListViewModel internal constructor(
             listPlantings.filter {
                 it.gardenPlantings.isNotEmpty()
             }
-
         }
+
+    val hasPlants: LiveData<Boolean> = gardenPlantingRepository.getGardenPlants().map { listGardenPlanting ->
+        listGardenPlanting.isNotEmpty()
+    }
 
 
 }

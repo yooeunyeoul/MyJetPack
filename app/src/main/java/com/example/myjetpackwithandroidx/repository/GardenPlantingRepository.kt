@@ -27,6 +27,8 @@ class GardenPlantingRepository private constructor(private val gardenPlantingDao
 
     fun getPlantAndGardenPlantings() = gardenPlantingDao.getPlantAndGardenPlantings()
 
+    fun getGardenPlants() = gardenPlantingDao.getGardenPlantings()
+
 
     companion object {
 

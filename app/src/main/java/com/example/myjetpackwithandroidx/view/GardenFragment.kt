@@ -36,11 +36,19 @@ class GardenFragment : Fragment() {
         return binding.root
     }
 
-    private fun subscribeUi(adapter: GardenPlantingAdapter, binding: FragmentGardenBinding?) {
+    private fun subscribeUi(adapter: GardenPlantingAdapter, binding: FragmentGardenBinding) {
         viewModel.gardenPlantingForPlant.observe(viewLifecycleOwner, Observer { plantings ->
             if (!plantings.isNullOrEmpty()) {
                 adapter.submitList(plantings)
+
+                binding.hasPlants = true
+            } else {
+                binding.hasPlants = false
             }
         })
+
+//        viewModel.hasPlants.observe(viewLifecycleOwner, Observer {
+//            binding.hasPlants = it
+//        })
     }
 }

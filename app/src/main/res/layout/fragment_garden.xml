@@ -11,8 +11,8 @@
             type="android.view.View.OnClickListener" />
 
         <variable
-            name="viewModel"
-            type="com.example.myjetpackwithandroidx.viewmodels.PlantAndGardenPlantingViewModel" />
+            name="hasPlants"
+            type="boolean" />
 
     </data>
 
@@ -29,6 +29,7 @@
             tools:listitem="@layout/list_item_plant" />
 
         <TextView
+            app:isGone="@{hasPlants}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
